@@ -5,7 +5,7 @@
     </div>
     <SearchForm />
     <div >
-      <h1 class='past-images-heading'> Past Images </h1>
+      <h2 class='past-images-heading'> Past Images </h2>
       <ul class='button-holder'>
         <li v-for="image in images" v-bind:key='image.id' v-bind:id='image.id'><button v-on:click='setImage(image.src)' class='view-button'>{{image.id}}</button></li>
       </ul>
@@ -57,7 +57,7 @@ export default {
   }
 
   .past-images-heading {
-    font-size: 3rem;
+    font-size: 2.5rem;
     color: white;
     text-align: center;
     font-family: 'Berkshire Swash', cursive;

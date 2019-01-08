@@ -6,7 +6,6 @@
 
 <script>
 
-
 export default {
   name: 'SearchForm',
   data () {
@@ -15,8 +14,10 @@ export default {
     }
   },
   methods: {
-      searchAPI() {
-          console.log(searchText)
+       async searchAPI(searchText) {
+          const response = await fetch(`https://images-api.nasa.gov/search?q=${searchText}`)
+          const results = await response.json()
+          console.log(results)
       }
   },
 }

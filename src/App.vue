@@ -31,7 +31,7 @@ export default {
 
   .heading {
     font-size: 4rem;
-    margin-bottom: 20px;
+    margin: 0 10px;
     font-family: 'Berkshire Swash', cursive;
     color: white;
   }
