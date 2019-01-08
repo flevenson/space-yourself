@@ -3,7 +3,9 @@
     <div class='image-holder'>
       <img class='main-image' :src='mainSRC' alt='Nasa Image of the day'/>
     </div>
-    <SearchForm />
+    <form class='search-form' v-on:submit.prevent='searchAPI(searchText)'>
+      <input class='search-input' type='text'  v-model="searchText" placeholder='type a search' />
+    </form>
     <div >
       <h2 class='past-images-heading'> Past Images </h2>
       <ul class='button-holder'>
@@ -17,7 +19,6 @@
 
 import image from '../assets/jupiter.jpg'
 import mockImages from '../assets/images.js'
-import SearchForm from './SearchForm'
 
 
 export default {
@@ -25,11 +26,9 @@ export default {
   data () {
     return {
       mainSRC: 'https://images-na.ssl-images-amazon.com/images/I/81zm9tKLsxL._SX450_.jpg',
-      images: mockImages
+      images: mockImages,
+      searchText: ''
     }
-  },
-  components: {
-    SearchForm,
   },
   methods: {
     loadImage: function() {
@@ -37,7 +36,12 @@ export default {
     },
     setImage: function(tag) {
       this.mainSRC = tag
-    }
+    },
+    async searchAPI(searchText) {
+          const response = await fetch(`https://images-api.nasa.gov/search?q=${searchText}&media_type=image`)
+          const results = await response.json()
+          this.mainSRC = results.collection.items[0].links[0].href
+      }
   },
 }
 </script>
