@@ -112,7 +112,7 @@ const images = [
         id: 3
     },
     {
-        src: 'https://www.google.com/imgres?imgurl=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fen%2Fthumb%2Fe%2Fee%2FWicket_W_Warrick.png%2F220px-Wicket_W_Warrick.png&imgrefurl=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FWicket_W._Warrick&docid=Dl_urLlOTcIVfM&tbnid=cIZIby96XglImM%3A&vet=10ahUKEwihx56sgt_fAhWHw4MKHdjeDTsQMwhqKAAwAA..i&w=220&h=293&safe=off&bih=593&biw=1260&q=ewok&ved=0ahUKEwihx56sgt_fAhWHw4MKHdjeDTsQMwhqKAAwAA&iact=mrc&uact=8',
+        src: 'https://www.thoughtco.com/thmb/qTB3uyVrgBWcFZniv9L4Fxor2xc=/768x0/filters:no_upscale():max_bytes(150000):strip_icc()/yoda-56a8f97a3df78cf772a263b4.jpg',
         id: 2
     },
     {

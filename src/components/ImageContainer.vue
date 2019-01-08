@@ -3,6 +3,7 @@
     <div class='image-holder'>
       <img class='main-image' :src='mainSRC' alt='Nasa Image of the day'/>
     </div>
+    <SearchForm />
     <div >
       <h1 class='past-images-heading'> Past Images </h1>
       <ul class='button-holder'>
@@ -16,16 +17,19 @@
 
 import image from '../assets/jupiter.jpg'
 import mockImages from '../assets/images.js'
+import SearchForm from './SearchForm'
+
 
 export default {
   name: 'ImageContainer',
-  mainImage: this.image || image,
   data () {
     return {
-      image: null,
       mainSRC: 'https://images-na.ssl-images-amazon.com/images/I/81zm9tKLsxL._SX450_.jpg',
       images: mockImages
     }
+  },
+  components: {
+    SearchForm,
   },
   methods: {
     loadImage: function() {
@@ -47,8 +51,9 @@ export default {
     height: 75vh;
   }
   .main-image {
-    max-width: 500px;
-    max-height: 45vh;
+    height: 45vh;
+    border: 3px solid white;
+    border-radius: 30px;
   }
 
   .past-images-heading {
@@ -82,6 +87,7 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 20px;
   }
 
   .button-holder {
