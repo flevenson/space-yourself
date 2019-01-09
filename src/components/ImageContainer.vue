@@ -58,6 +58,7 @@ export default {
     height: 45vh;
     border: 3px solid white;
     border-radius: 30px;
+    box-shadow: 0 0 5px 2px #0000007d;
   }
 
   .past-images-heading {
@@ -84,6 +85,7 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: 0 0 5px 2px #0000007d;
   }
 
   .image-holder{
@@ -100,4 +102,20 @@ export default {
     flex-wrap: wrap;
     flex-direction: row;
   }
+
+  .search-input {
+        box-sizing: border-box;
+        height: 40px;
+        width: 300px;
+        border-radius: 50px;
+        border: 3px solid white;
+        color: white;
+        background-color: black;
+        padding: 20px;
+        font-size: 1.2rem;
+        box-shadow: 0 0 5px 2px #0000007d;
+    }
+  .search-input::placeholder {
+        color: white;
+    }
 </style>
