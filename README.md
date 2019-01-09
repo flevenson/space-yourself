@@ -2,7 +2,9 @@
 
 # Purpose
 
-a first attempt at an app in vue, pulling from the nasa search api to get images to display
+-a first attempt at an app in vue, pulling from the nasa search api to get images to display
+
+-a user should be able to visit the app, select from the past astronomy photos of the day and also search for an image using a specific search term.
 
 ### Getting it Running:
 
