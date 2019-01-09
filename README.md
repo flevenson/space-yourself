@@ -6,8 +6,9 @@ a first attempt at an app in vue, pulling from the nasa search api to get images
 
 ### Getting it Running:
 
-npm install
-npm start
+-npm install
+
+-npm start
 
 ## Technologies used
 
