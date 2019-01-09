@@ -6,6 +6,10 @@ a first attempt at an app in vue, pulling from the nasa search api to get images
 
 ### Getting it Running:
 
+-git clone git https://github.com/flevenson/space-yourself.git
+
+-cd space-yourself
+
 -npm install
 
 -npm start
