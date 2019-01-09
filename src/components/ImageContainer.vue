@@ -4,7 +4,7 @@
       <img class='main-image' :src='mainSRC' alt='Nasa Image of the day'/>
     </div>
     <form class='search-form' v-on:submit.prevent='searchAPI(searchText)'>
-      <input class='search-input' type='text'  v-model="searchText" placeholder='type a search' />
+      <input class='search-input' type='text'  v-model="searchText" placeholder='type a search and hit enter!' />
     </form>
     <div >
       <h2 class='past-images-heading'> Past Images </h2>
