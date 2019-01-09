@@ -10,10 +10,11 @@
 <script>
 import ImageContainer from './components/ImageContainer'
 
+
 export default {
   name: 'App',
   components: {
-    ImageContainer
+    ImageContainer,
   }
 }
 </script>
@@ -30,14 +31,16 @@ export default {
 
   .heading {
     font-size: 4rem;
-    margin-bottom: 20px;
+    margin: 0 10px;
     font-family: 'Berkshire Swash', cursive;
     color: white;
   }
   
   #app {
-    background-color: black;
-    width: 100vw;
-    height: 100vh;
+    background-color: gray;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
   }
 </style>

@@ -3,9 +3,13 @@
     <div class='image-holder'>
       <img class='main-image' :src='mainSRC' alt='Nasa Image of the day'/>
     </div>
-    <div class='button-holder'>
-      <ul>
-        <li v-for="image in images" v-bind:key='image.id' v-bind:id='image.id'><button v-on:click='setImage(image.src)'>View</button></li>
+    <form class='search-form' v-on:submit.prevent='searchAPI(searchText)'>
+      <input class='search-input' type='text'  v-model="searchText" placeholder='type a search' />
+    </form>
+    <div >
+      <h2 class='past-images-heading'> Past Images </h2>
+      <ul class='button-holder'>
+        <li v-for="image in images" v-bind:key='image.id' v-bind:id='image.id'><button v-on:click='setImage(image.src)' class='view-button'>{{image.id}}</button></li>
       </ul>
     </div>
   </div>
@@ -14,36 +18,16 @@
 <script>
 
 import image from '../assets/jupiter.jpg'
-import image2 from '../assets/space_1.jpg'
-import image3 from '../assets/space_2.jpeg'
-import image4 from '../assets/space_cat.jpeg'
+import mockImages from '../assets/images.js'
 
 
 export default {
   name: 'ImageContainer',
-  mainImage: this.image || image,
   data () {
     return {
-      image: null,
-      mainSRC: image,
-      images: [
-        {
-          src: image,
-          index: 0
-        },
-        {
-          src: image2,
-          index: 1,
-        }, 
-        {
-          src: image3,
-          index: 2
-        },
-        {
-          src: image4,
-          index:3
-        }
-        ]
+      mainSRC: 'https://images-na.ssl-images-amazon.com/images/I/81zm9tKLsxL._SX450_.jpg',
+      images: mockImages,
+      searchText: ''
     }
   },
   methods: {
@@ -52,12 +36,16 @@ export default {
     },
     setImage: function(tag) {
       this.mainSRC = tag
-    }
+    },
+    async searchAPI(searchText) {
+          const response = await fetch(`https://images-api.nasa.gov/search?q=${searchText}&media_type=image`)
+          const results = await response.json()
+          this.mainSRC = results.collection.items[0].links[0].href
+      }
   },
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   .main-container {
     display: flex;
@@ -67,13 +55,49 @@ export default {
     height: 75vh;
   }
   .main-image {
-    width: 500px;
+    height: 45vh;
+    border: 3px solid white;
+    border-radius: 30px;
   }
-  
+
+  .past-images-heading {
+    font-size: 2.5rem;
+    color: white;
+    text-align: center;
+    font-family: 'Berkshire Swash', cursive;
+    text-decoration: underline;
+  }
+
+  li {
+    list-style-type: none;
+  }
+
+  .view-button {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+    background-color: black;
+    color: white;
+    border: 4px solid white;
+    border-radius: 50px;
+    margin: 2.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .image-holder{
     width: 100vw;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .button-holder {
+    width: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
   }
 </style>
