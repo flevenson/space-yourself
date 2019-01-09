@@ -1,21 +1,20 @@
 # space-yourself
 
-> space app in vue
+# Purpose
 
-## Build Setup
+a first attempt at an app in vue, pulling from the nasa search api to get images to display
 
-``` bash
-# install dependencies
+### Getting it Running:
+
 npm install
+npm start
 
-# serve with hot reload at localhost:8080
-npm run dev
+## Technologies used
 
-# build for production with minification
-npm run build
+-Vue
 
-# build for production and view the bundle analyzer report
-npm run build --report
-```
+## Known Bugs
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+the app was originally intended to use the NASA photo of the day api but the api was down, so the decision was made to make the app use the search API from NASA instead
+
+This app is untested aside from manual testing and it would be good to add some automated testing
